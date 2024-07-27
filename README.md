@@ -1,8 +1,8 @@
-# My React Task Manager
+# Ravi React Frontend Assignment
 
 ## Overview
 
-My React Task Manager is a web application designed to help users manage their tasks efficiently. Users can create, edit, and delete tasks. The application also features a search bar to filter tasks and pagination to navigate through longer lists.
+React Frontend Assignment is a web application to check my skill and capabilities.
 
 ## Prerequisites
 
@@ -44,7 +44,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 For any questions or feedback, please contact:
-Ravi Kishan
-gehalotkishan@gmail.com
-+91-6392369997
-https://github.com/rkgehalot/frontend-assignment
+**Ravi Kishan**
+**gehalotkishan@gmail.com**
+**+91-6392369997**
+**https://github.com/rkgehalot/frontend-assignment**
