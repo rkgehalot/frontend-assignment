@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Banner from './components/Banner';
 import Card from './components/Card';
 import Loader from './components/Loader';
+import { fetchRetreats } from './services/retreatService';
 
 export default function App() {
   const [retreats, setRetreats] = useState([])
@@ -12,19 +13,11 @@ export default function App() {
   const [type, setType] = useState('');
   const [loading, setLoading] = useState(false);
 
-
-
-  const fetchRetreats = async (page, query = '') => {
+  const loadRetreats = async (page, query = '') => {
+    setLoading(true)
     try {
-      setLoading(true)
-      const res = await fetch(`https://669f704cb132e2c136fdd9a0.mockapi.io/api/v1/retreats?search=${query}&filter=${type}&page=${page}&limit=3`);
-      if (!res.ok) {
-        throw new Error(`HTTP error! status: ${res.status}`);
-      }
-      const data = await res.json();
-      console.log('>>>', data);
-      data && setRetreats(data)
-
+      const data = await fetchRetreats(page, query, type);
+      setRetreats(data);
     } catch (error) {
       console.error('Error fetching retreats:', error);
     }
@@ -38,9 +31,8 @@ export default function App() {
     setPage(1); 
   };
 
-
   useEffect(() => {
-    fetchRetreats(page, searchQuery);
+    loadRetreats(page, searchQuery);
   }, [page, type, searchQuery])
 
   return (

@@ -1,3 +1,8 @@
+/**
+ * @param {number} timestamp - Unix time stamp.
+ * @param {string} dayRange - range by default 5.
+ * @returns {string} - Return date in format 10-15 June 2024.
+ */
 export function formatDateRange(timestamp, dayRange=5) {
   const startDate = new Date(timestamp * 1000);
   const endDate = new Date(startDate);
